@@ -36,7 +36,7 @@ void setup() {
   da = 0;
 
   //set gravity
-  g = 0.05;
+  g = 1;
 }
 void draw() {
   //background clear each time as program loops
@@ -61,10 +61,11 @@ void draw() {
 
   if (x1 < -50) {
     x1 = 900; //place off screen on right 
-    s1 = -1; //reset the speed
+    s1 = -10; //reset the speed
   }
   if (x2 < -150) {
     x2 = 1100;
+    s2 = -10; //reset the speed
   }
   //dino stuff
 
@@ -79,7 +80,7 @@ void draw() {
   ds = ds + da;  //change speed base on speed
   dy = dy + ds;  //change speed based on acceleration
 
-  //sop the dino if it hits the ground
+  //stop the dino if it hits the ground
   if (dy > 170) { // bottom of the screen (200) minus the radius of (30)
     dy = 170;
     ds = 0;
@@ -92,6 +93,8 @@ void draw() {
 
 //respond to keypress
 void keyPressed() {
+  
   dy = 70;
-  da = -1;
+  da = da -.05;
+ 
 }
