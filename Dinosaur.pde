@@ -24,19 +24,34 @@ class Dinosaur {
     ds = ds + da;  //change speed based on speed
     dy = dy + ds;  //change speed based on acceleration
     
-  //status updates (CHANGE COLOUR TO WHITE TO VIEW IN GAME)
-  fill(255);
-  textSize(30);
-  text("dy is " + dy, 250, 25);
-  text("ds is " + ds, 250, 50);
-  text("da is " + da, 250, 75);
-  text("distance is " + d1, 250, 100);
-
     //stop the dino if it hits the ground
-    if (dy > 170) { // bottom of the screen (200) minus the radius of (30)
-      dy = 170;
-      ds = 0;
-      da = 0;
-    }
+  if (dy > 170) { // bottom of the screen (200) minus the radius of (30)
+    dy = 170;
+    ds = 0;
+    da = 0;
   }
+
+    //status updates (CHANGE COLOUR TO WHITE TO VIEW IN GAME)
+    fill(255);
+    textSize(30);
+    text("dy is " + dy, 250, 25);
+    text("ds is " + ds, 250, 50);
+    text("da is " + da, 250, 75);
+    //text("distance is " + d1, 250, 100); (will make this work later)
+  }
+
+  //getY
+
+  //Purpose: an accessor method; lets us find where dino is (vertically)
+  float getY() {
+    return dy;
+  }
+
+  //setA
+
+  //Purpose: a mutator method; lets the acceleration for the dino be set from outside the class
+  void setA(float newA_) {
+    da = newA_;
+  }
+
 }

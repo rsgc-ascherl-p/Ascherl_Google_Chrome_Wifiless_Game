@@ -11,14 +11,14 @@ Dinosaur dino1;
 
 //runs on once
 void setup() {
-  
+
   size(800, 200);
-  
+
   //m creates and initializes the dino objectd
   dino1 = new Dinosaur(0, 170, 0);
-  
+
   c1 = new Cactus(900, -0.01, -10);
-  
+
 
   ////set the initial position of the cactus
   //x2 = 1100; //position of cactus 2 off screen on the right
@@ -30,7 +30,7 @@ void setup() {
   //s2 = -10;
 
   //set gravity
-  g = .025;
+  g = .075;
 }
 
 void draw() {
@@ -39,7 +39,7 @@ void draw() {
 
   //update dino on screen
   dino1.update(g);
-  
+
   // update the cactus
   c1.update(g);
 
@@ -53,7 +53,7 @@ void draw() {
   //  x2 = 1100;
   //  s2 = -10; //reset the speed
   //}
-  
+
   //dino stuff
 
   ////dertimine whether there is a hit with cactus 1
@@ -72,19 +72,17 @@ void draw() {
   //float a2 = dy - 175;
   //float b2 = dy - 175;
   //d1 = sqrt(pow(a2, 2) + pow(b2, 2));
-  
+
   //if (d2 < 55) {
   // fill(255);
   // text("HIT", 100, 100);
   // noLoop();
   //}
-
 }
 
-////respond to keypress
-//void keyPressed() {
-//  if (dy >= 170) {
-//    da = -0.5;
-//  }
-
-//}
+//respond to keypress
+void keyPressed() {
+  if (dino1.getY() == 170) {
+    dino1.setA(-1);
+  }
+}
