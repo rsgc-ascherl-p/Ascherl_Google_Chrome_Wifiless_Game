@@ -23,6 +23,14 @@ class Dinosaur {
     da = da + g;   //change acceleration based on gravity
     ds = ds + da;  //change speed based on speed
     dy = dy + ds;  //change speed based on acceleration
+    
+  //status updates (CHANGE COLOUR TO WHITE TO VIEW IN GAME)
+  fill(255);
+  textSize(30);
+  text("dy is " + dy, 250, 25);
+  text("ds is " + ds, 250, 50);
+  text("da is " + da, 250, 75);
+  text("distance is " + d1, 250, 100);
 
     //stop the dino if it hits the ground
     if (dy > 170) { // bottom of the screen (200) minus the radius of (30)

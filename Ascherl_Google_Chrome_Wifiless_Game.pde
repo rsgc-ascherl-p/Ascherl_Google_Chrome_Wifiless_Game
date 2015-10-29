@@ -56,14 +56,6 @@ void draw() {
   
   //dino stuff
 
-  ////status updates (CHANGE COLOUR TO WHITE TO VIEW IN GAME)
-  //fill(255);
-  //textSize(30);
-  //text("dy is " + dy, 250, 25);
-  //text("ds is " + ds, 250, 50);
-  //text("da is " + da, 250, 75);
-  //text("distance is " + d1, 250, 100);
-
   ////dertimine whether there is a hit with cactus 1
   ////        dino - cactus
   //float a1 = dy - 175;
