@@ -66,7 +66,7 @@ class Dinosaur {
     //    dino - cactus
     float a = dy - c.getY();
     float b = dx - c.getX();
-    d = sqrt(a*a + b*b);
+    float distance = sqrt(a*a + b*b);
 
     // decide whether dino is touching this cactus
     //          dino radius     cactus radius

@@ -3,8 +3,7 @@ float dy;  //tracks position of dino
 float ds;  //tracks the speed of the dino
 float da;  //tracks the acceleration of the dino
 float g;   //tracks gravity
-float d1;  //tracks distance between dion and cactus 1
-float d2;  //tracks distance between dino and cactus 2
+
 
 Cactus c1;
 Dinosaur dino1;
@@ -45,7 +44,7 @@ void draw() {
 
 
   //check whther the cactus is touching the dino
-  if (d1.isTouching(c1)) {
+  if (dino1.isTouching(c1)) {
     textSize(80);
     text("HIT", 400, 100);
     noLoop();  //stop the game
