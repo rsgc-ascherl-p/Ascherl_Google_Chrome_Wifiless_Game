@@ -46,7 +46,7 @@ void draw() {
   //check whther the cactus is touching the dino
   if (dino1.isTouching(c1)) {
     textSize(80);
-    text("HIT", 400, 100);
+    text("HIT", 100, 100);
     noLoop();  //stop the game
   }
 }
