@@ -44,45 +44,17 @@ void draw() {
   c1.update(g);
 
 
-  //fill(211, 17, 20);
-  //ellipse(x2, 175, 50, 50);
-
-  //put the obstacle back on the right edge if it goes past the left edge
-
-  //if (x2 < -150) {
-  //  x2 = 1100;
-  //  s2 = -10; //reset the speed
-  //}
-
-  //dino stuff
-
-  ////dertimine whether there is a hit with cactus 1
-  ////        dino - cactus
-  //float a1 = dy - 175;
-  //float b1 = 50 - x1;
-  //d1 = sqrt(pow(a1, 2) + pow(b1, 2));
-
-  ////If there is a hit between dino and cactus 1 stop everything
-  //if (d1 < 55) {
-  // fill(255);
-  // text("HIT", 100, 100);
-  // noLoop();
-  //}
-  ////determinte whether there is a hit with cactus 2
-  //float a2 = dy - 175;
-  //float b2 = dy - 175;
-  //d1 = sqrt(pow(a2, 2) + pow(b2, 2));
-
-  //if (d2 < 55) {
-  // fill(255);
-  // text("HIT", 100, 100);
-  // noLoop();
-  //}
-}
-
-//respond to keypress
-void keyPressed() {
-  if (dino1.getY() == 170) {
-    dino1.setA(-1);
+  //check whther the cactus is touching the dino
+  if (d1.isTouching(c1)) {
+    textSize(80);
+    text("HIT", 400, 100);
+    noLoop();  //stop the game
   }
 }
+
+  //respond to keypress
+  void keyPressed() {
+    if (dino1.getY() == 170) {
+      dino1.setA(-1);
+    }
+  }
