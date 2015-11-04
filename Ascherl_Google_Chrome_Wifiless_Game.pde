@@ -3,6 +3,7 @@ float dy;  //tracks position of dino
 float ds;  //tracks the speed of the dino
 float da;  //tracks the acceleration of the dino
 float g;   //tracks gravity
+float score;  //tracks amount of times cactus goes off screen
 
 
 Cactus c1;
@@ -40,20 +41,24 @@ void draw() {
   dino1.update(g);
 
   // update the cactus
-  c1.update(g);
+  score = score + c1.update(g);
 
 
   //check whther the cactus is touching the dino
   if (dino1.isTouching(c1)) {
-    textSize(80);
-    text("HIT", 100, 100);
+    textSize(50);
+    text("GAME OVER", 50, 50);
     noLoop();  //stop the game
   }
+  //Display score in top right corner
+  textSize(50);
+  fill(255);
+  text("Points:" + score, 400, 50);
 }
 
-  //respond to keypress
-  void keyPressed() {
-    if (dino1.getY() == 170) {
-      dino1.setA(-1);
-    }
+//respond to keypress
+void keyPressed() {
+  if (dino1.getY() == 170) {
+    dino1.setA(-1);
   }
+}

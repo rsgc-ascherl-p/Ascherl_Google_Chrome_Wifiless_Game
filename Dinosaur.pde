@@ -36,7 +36,7 @@ class Dinosaur {
     }
 
     //status updates (CHANGE COLOUR TO WHITE TO VIEW IN GAME)
-    fill(255);
+    fill(0);
     textSize(30);
     text("dy is " + dy, 250, 25);
     text("ds is " + ds, 250, 50);

@@ -16,7 +16,7 @@ class Cactus {
   }
 
   //update: draws things related to cactus
-  void update(float g) {
+  float update(float g) {
 
     //draw a cactus at the bottom right corner of the screen
     fill(0, 0, 255);
@@ -32,7 +32,11 @@ class Cactus {
     if (x1 < -50) {
       x1 = 900; //place off screen on right 
       s1 = -10; //reset the speed
+      return 50;
     }
+    
+    // cactus is still on screen
+    return 0;
   }
 
   //getX
